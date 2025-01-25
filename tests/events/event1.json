@@ -1,0 +1,7 @@
+{
+  "httpMethod": "GET",
+  "path": "/function1",
+  "headers": {
+    "Content-Type": "application/json"
+  }
+} 

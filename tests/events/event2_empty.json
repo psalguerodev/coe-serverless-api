@@ -1,0 +1,19 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /function2",
+  "rawPath": "/function2",
+  "rawQueryString": "",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "api-id",
+    "http": {
+      "method": "POST",
+      "path": "/function2"
+    }
+  },
+  "body": "{}",
+  "isBase64Encoded": false
+} 

@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# AWS SAM
+.aws-sam/
+samconfig.toml
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# LocalStack
+volume/
+.localstack/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+
+# Environment variables
+.env.local
+.env.*.local
+
+# Tests
+.pytest_cache/
+.hypothesis/
+
+# Docker
+docker-compose.override.yml
+
+# Serverless directories
+.serverless/
+
+# Node (en caso de usar capas con dependencias de Node.js)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12
+
+# Otros
+*.bak
+*.tmp
+*.temp
+.*.swp
+.DS_Store
+Thumbs.db 

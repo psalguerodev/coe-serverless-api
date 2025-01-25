@@ -1,0 +1,66 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Proyecto Serverless con SAM
+
+Globals:
+  Function:
+    Timeout: 29
+    MemorySize: 128
+    Runtime: python3.12
+    Environment:
+      Variables:
+        LOG_LEVEL: INFO
+        POWERTOOLS_SERVICE_NAME: mi-servicio
+    Layers:
+      - !Ref CommonLayer
+
+Parameters:
+  Stage:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod
+
+Resources:
+  CommonLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: common-layer
+      Description: Capa común con utilidades
+      ContentUri: src/layers/common
+      CompatibleRuntimes:
+        - python3.12
+      RetentionPolicy: Retain
+
+  Function1:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/functions/function1/
+      Handler: app.lambda_handler
+      Environment:
+        Variables:
+          SECRET_NAME: !Sub '/${Stage}/mi-secreto'
+      Policies:
+        - SecretsManagerReadWrite
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /function1
+            Method: get
+
+  Function2:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/functions/function2/
+      Handler: app.lambda_handler
+      Environment:
+        Variables:
+          CUSTOM_VAR: "valor-personalizado"
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /function2
+            Method: post 
