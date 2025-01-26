@@ -84,4 +84,7 @@ yarn-error.log*
 *.temp
 .*.swp
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Logs del sistema
+*.log 

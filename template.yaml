@@ -28,7 +28,7 @@ Resources:
     Properties:
       LayerName: common-layer
       Description: Capa común con utilidades
-      ContentUri: src/layers/common
+      ContentUri: src/layers/common/
       CompatibleRuntimes:
         - python3.12
       RetentionPolicy: Retain

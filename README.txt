@@ -116,6 +116,17 @@ LIMPIEZA
 3. Desactivar entorno virtual:
    deactivate
 
+4. Después de ejecutar pruebas, puedes limpiar archivos temporales:
+   ./clean.sh
+
+El script limpia:
+- Archivos de caché Python (__pycache__, .pyc)
+- Archivos de cobertura (htmlcov/, .coverage)
+- Archivos temporales de pytest (.pytest_cache/)
+- Archivos de LocalStack (volume/, .localstack/)
+- Build de SAM (.aws-sam/)
+- Archivos temporales del sistema (.log, .tmp)
+
 NOTAS IMPORTANTES
 - Mantener actualizadas las dependencias
 - Revisar los logs para diagnóstico

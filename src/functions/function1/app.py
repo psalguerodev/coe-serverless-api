@@ -2,7 +2,14 @@ import json
 import os
 import boto3
 from botocore.config import Config
-from utils.logger import setup_logger
+
+# Importar desde el layer
+try:
+    from utils.logger import setup_logger  # Para producción (layer)
+except ImportError:
+    import sys
+    sys.path.append(os.path.join(os.path.dirname(__file__), '../../layers/common/python'))
+    from utils.logger import setup_logger  # Para desarrollo local
 
 logger = setup_logger(__name__)
 
